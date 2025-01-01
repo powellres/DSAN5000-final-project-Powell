@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSAN-5000: Project - Conclusion</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/about_me.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/powellres" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.ravelry.com/api#index" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../introduction/introduction.html" rel="" target="">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
+ <span class="menu-text">Data Cleaning</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
+ <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../naive_bayes/naive_bayes.html" rel="" target="">
+ <span class="menu-text">Naive Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../clustering/clustering.html" rel="" target="">
+ <span class="menu-text">Clustering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/dimensionality_reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/decision_trees.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../conclusions/conclusions.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Conclusions</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview-of-work" id="toc-overview-of-work" class="nav-link active" data-scroll-target="#overview-of-work">Overview of work</a></li>
+  <li><a href="#reflecting-on-research-questions" id="toc-reflecting-on-research-questions" class="nav-link" data-scroll-target="#reflecting-on-research-questions">Reflecting on Research Questions</a></li>
+  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a></li>
+  <li><a href="#closing-thoughts" id="toc-closing-thoughts" class="nav-link" data-scroll-target="#closing-thoughts">Closing Thoughts</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Conclusion</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="overview-of-work" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-work">Overview of work</h2>
+<p>As I reflect on the work I’ve done over the semester, I’d like to do a summarization of the tabs and my success in the various models used.</p>
+<section id="data-gathering" class="level4">
+<h4 class="anchored" data-anchor-id="data-gathering">Data Gathering</h4>
+<p>Data gathering was one of the most important tasks and ended up being one of the most time consuming. I was lucky to find an R package with similar functionality to the API query process I was doing in python, but that set up the next steps of accomplishing all of the queries and formatting the data.</p>
+<p>My main problem to address was the API dropping the request if I tried to gather over 5000 patterns at a time. This led me to running some time tests for different amounts of patterns and settling on a decent amount in order to get as much data without going over the limit. Furthermore, I was only ever able to access 100,000 patterns due to the way the API was structured. I could have found a way around this but 100,000 patterns was a solid amount to start with.</p>
+<p>Given all the pattern IDs I still needed to collect the relevant pattern info with the package so I went through another round of time testing to find an optimal amount for that case. I did and then processed it all into a dataframe. I then split this frame into the heavier text data, csvs representing the record data, and jsons with much of the nested information.</p>
+<p>With all that being set up I moved to the data cleaning step.</p>
+</section>
+<section id="data-cleaning" class="level4">
+<h4 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h4>
+<p>On the data cleaning, I began by importing the data and removing columns and values that would not be of interest for my process. This included a lot of technical details as well as information about who created the pattern, which was not needed for my expected process. That being out of the way, I moved on to splitting the nested dataframes from the imported JSON file; adjusting the specific code depending on the parameter and then rejoining the information to the main file. After that I did one categorization task and type casted the numeric columns. I renamed it all and then saved it for future use.</p>
+</section>
+<section id="exploratory-data-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h4>
+<p>The exploratory data analysis was one of the most fun tabs for me as it involved delving into the specifics of a lot of knitting lore and learning some great fun facts about the data. I began with some correlation checking and data summarization which gave some graphs and statistics which set a path for me to further analyze the information. I noticed that my data was peppered with outliers and so my next task became understanding the outlier behavior, looking at the patterns, and then adjusting to see if there were real trends or if the data itself was wrong.</p>
+<p>That task made up a good chunk of my EDA. I found some outliers which were not appropriate and some which were, traced back information on some users who were particularly prolific, and adjusted values so that they would be appropriate for future analysis. It was also here that I replaced NA values when it was possible and left some data missing when it was not.</p>
+<p>Using that knowledge, I formulated some hypotheses and began to find some relationships in the data. I was successful at pinning a relationship between yardage and price as well as difficulty and price. I Then visualized some of the text data to isolate the words which popped up the most. The visualizations of the words were particularly interesting as they gave two different glimpses at the type of vocabulary knitters use and how we label our patterns.</p>
+</section>
+<section id="naive-bayes" class="level4">
+<h4 class="anchored" data-anchor-id="naive-bayes">Naive Bayes</h4>
+<p>The Naive Bayes tab was the first foray into supervised classification algorithms with the express goal, which was repeated later, of predicting the type of pattern based off of given parameters. For Naive Bayes this was taking a set of features, assuming independence, and then using an optimization algorithm to train the relationships In the data. I did a few rounds of this including some feature selection with two different types of the model and ended up with an accuracy rate of 45%-47% which set a benchmark for further tests. I conducted a similar test with my text data and, after shrinking it some, I got an accuracy of 63% which may have been my overall highest. It still did not feel wildly successful, though, as I thought descriptions would be very able to describe the pattern and be much more succesful overall. Again it was wildly trimmed down for my computer to process it but I do hope I can run this specific test again.</p>
+</section>
+<section id="clustering" class="level4">
+<h4 class="anchored" data-anchor-id="clustering">Clustering</h4>
+<p>For the clustering tab, My goal was to detect if there were any underlying groups in the data that were not captured by the type or categories of the patterns. I did this with several separate algorithms but was not very successful. Most of the optimal clusters, found using the elbow method or silhouette scores, ended up being very low and simply demarcating the difference between the more plentiful patterns with fewer amounts of yardage and the few that were more like outlier in terms of yardage. I think this was my least successful tab overall although one of my graphs did look like neapolitan ice cream.</p>
+</section>
+<section id="dimensionality-reduction" class="level4">
+<h4 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h4>
+<p>For this tab, my goal was twofold: to use PCA to find a popularity statistic across different parameters and to use TSNE to visualize what some of those patterns may be. As it turned out, I was successful in the former but not in the latter. The PCA was able to capture the variability in the data with a first principal component with 98% of the variance explained which I used to reference which pattern was truly the most successful. For TSNE however the visuals took a long time to process and never seemed to give information about the data itself even at different perplexity scores. I ended up leaving it on a visualization which I thought looked like the Antarctic flag.</p>
+</section>
+<section id="decision-trees" class="level4">
+<h4 class="anchored" data-anchor-id="decision-trees">Decision Trees</h4>
+<p>Decision Trees were my last tab where I again worked to classify the type of a pattern based off of the information. I did a few rounds of hyperparameter selection by finding an optimal max depth as well as the features which were able to accurately predict the targets the best. Singular decision trees were only able to get me about 46% accuracy, which was comparable to the Naive Bayes methods, so I attempted a boosting method as well. This managed to increase my accuracy to 55% which, while not as good as the text Naive Bayes, ended up being one of the most successful of all of my classifying models.</p>
+</section>
+</section>
+<section id="reflecting-on-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="reflecting-on-research-questions">Reflecting on Research Questions</h2>
+<ol type="1">
+<li>What relationships exist between known parameters?</li>
+</ol>
+<p>I was able to establish some relationships between parameters but couldn’t with others. The data was fairly dense so there is more to discover.</p>
+<ol start="2" type="1">
+<li>Are there groupings outside of known parameters that better represent the data?</li>
+</ol>
+<p>It did not seem like there were other than general grouping in the density of the data.</p>
+<ol start="3" type="1">
+<li>Are there any parameters that overlap and could reduce redundancy?</li>
+</ol>
+<p>There was no overlap other than in values with slight differences such as notes, notes_html and needle size US vs.&nbsp;metric.</p>
+<ol start="4" type="1">
+<li>What sort of keywords are most often used in pattern descriptions?</li>
+</ol>
+<p>Intuitively, pattern was the most cited with others such as knit, yarn, gauge, needle, and size being common.</p>
+<ol start="5" type="1">
+<li>What ways are there to measure popularity of a specific pattern</li>
+</ol>
+<p>I used the counts of various things and ratings scores in a Principal Component Analysis and was able to determine popularity in a cohesive way.</p>
+<ol start="6" type="1">
+<li>How could a more tailored recommendation algorithm be built?</li>
+</ol>
+<p>While I did not get to do this, a ARM model could be fitted to fill that purpose</p>
+<ol start="7" type="1">
+<li>Are some pattern types more popular than others?</li>
+</ol>
+<p>Yes! Socks, shawls, pullovers, and hats were by far more popular than all other patterns, even scarves!</p>
+<ol start="8" type="1">
+<li>Could a machine learning process determine the kind of garment by the parameters?</li>
+</ol>
+<p>With mixed results. Given the data, accuracy would be a coinflip but it is within possibility.</p>
+<ol start="9" type="1">
+<li>How could pattern data be best correlated with real world trends if at all?</li>
+</ol>
+<p>The data is not time seriesed to allow for overlap in that way but there are some historic outliers such as the pussy cat hat mentioned in the EDA section.</p>
+<ol start="10" type="1">
+<li>What parameters could be used to create a more succinct pattern browsing experience</li>
+</ol>
+<p>From my own knowledge of the patterns, dimensional values like gauge give an idea of shape. This could help knitters find something appropriate by accurate size and give the models another powerful datapoint to help predict.</p>
+</section>
+<section id="future-work" class="level2">
+<h2 class="anchored" data-anchor-id="future-work">Future Work</h2>
+<p>While the data that I had was very successful in being able to accurately label, classify, visualize, and describe relationships in the data, I only scratched the surface of the database itself and the different parameters it contains.</p>
+<p>First, I was only able to access 100,000 patterns recommended by Ravelry. This was a blessing and a curse as querying more patterns may have taken exponentially longer but in the future I would like to try to have a full list of all the patterns, the users that created them, and all the information about the patterns themselves. This would be over one million lines of information and could most likely be used to improve the performance of the pre-existing models on this website.</p>
+<p>Further, I did not engage directly with the pattern attributes and categories which act as subsections for users to find the patterns they were interested in. Due to the nested and recursive nature of these parameters this did not seem to be a successful goal for this project but I can imagine using those as a help in classifying in the future; or using the attributes and categories as a target value itself.</p>
+<p>Lastly, I would like to spend more time focusing on user behavior and creating a feedback loop for Ravelry to encourage use with optimized targeting algorithms. This goal was mostly halted by the lack of patterns available in total, as I would only have a slice of each user’s interaction with the site. In the future though there may be success in creating better targeting algorithms with a method like ARM which I did not approach in this project.</p>
+</section>
+<section id="closing-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="closing-thoughts">Closing Thoughts</h2>
+<p>As I said when I started this project, this has been one of my favorite datasets I’ve worked on as it relates to a personal passion and has a good mix of record and label data for me to use with models. My interest in some of the more data based parts of knitting has increased and I have learned many fun facts which I was able to share with friends, knitting circles, and the internet. I’m glad to have had the chance to work on this project and I look forward to continuing to work with the data and gain more insight into my favorite hobby.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

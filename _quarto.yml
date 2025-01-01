@@ -1,0 +1,43 @@
+project:
+  type: website
+
+website:
+  title: "DSAN-5000: Project"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - href: about_me/about_me.ipynb
+        text: About Me
+      - href: https://github.com/powellres
+        text: Code
+      - href: https://www.ravelry.com/api#index
+        text: Data
+      - href: introduction/introduction.ipynb
+        text: Introduction
+      - text: Data Gathering
+        href: data_gathering/data_gathering.ipynb
+      - href: data_cleaning/data_cleaning.ipynb
+        text: Data Cleaning
+      - href: eda/eda.ipynb
+        text: Data Exploration
+      - href: naive_bayes/naive_bayes.ipynb
+        text: Naive Bayes
+      - href: clustering/clustering.ipynb
+        text: Clustering
+      - href: dimensionality_reduction/dimensionality_reduction.ipynb
+        text: Dimensionality reduction
+      - href: decision_trees/decision_trees.ipynb
+        text: Decision Trees
+ #    - href: arm/arm_ipynb
+ #      text: ARM
+      - href: conclusions/conclusions.qmd
+        text: Conclusions
+      
+format:
+  html:
+    theme: journal
+    toc: true
+
+
+

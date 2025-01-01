@@ -1,0 +1,106 @@
+---
+title: Conclusion
+format:
+    html:
+        code-fold: true 
+
+---
+
+## Overview of work
+
+As I reflect on the work I've done over the semester, I'd like to do a summarization of the tabs and my success in the various models used. 
+
+#### Data Gathering
+
+Data gathering was one of the most important tasks and ended up being one of the most time consuming. I was lucky to find an R package with similar functionality to the API query process I was doing in python, but that set up the next steps of accomplishing all of the queries and formatting the data.
+
+My main problem to address was the API dropping the request if I tried to gather over 5000 patterns at a time. This led me to running some time tests for different amounts of patterns and settling on a decent amount in order to get as much data without going over the limit. Furthermore, I was only ever able to access 100,000 patterns due to the way the API was structured. I could have found a way around this but 100,000 patterns was a solid amount to start with.
+
+Given all the pattern IDs I still needed to collect the relevant pattern info with the package so I went through another round of time testing to find an optimal amount for that case. I did and then processed it all into a dataframe. I then split this frame into the heavier text data, csvs representing the record data, and jsons with much of the nested information. 
+
+With all that being set up I moved to the data cleaning step.
+
+#### Data Cleaning
+
+On the data cleaning, I began by importing the data and removing columns and values that would not be of interest for my process. This included a lot of technical details as well as information about who created the pattern, which was not needed for my expected process. That being out of the way, I moved on to splitting the nested dataframes from the imported JSON file; adjusting the specific code depending on the parameter and then rejoining the information to the main file. After that I did one categorization task and type casted the numeric columns. I renamed it all and then saved it for future use.
+
+#### Exploratory Data Analysis
+
+The exploratory data analysis was one of the most fun tabs for me as it involved delving into the specifics of a lot of knitting lore and learning some great fun facts about the data. I began with some correlation checking and data summarization which gave some graphs and statistics which set a path for me to further analyze the information. I noticed that my data was peppered with outliers and so my next task became understanding the outlier behavior, looking at the patterns, and then adjusting to see if there were real trends or if the data itself was wrong.
+
+That task made up a good chunk of my EDA. I found some outliers which were not appropriate and some which were, traced back information on some users who were particularly prolific, and adjusted values so that they would be appropriate for future analysis. It was also here that I replaced NA values when it was possible and left some data missing when it was not.
+
+Using that knowledge, I formulated some hypotheses and began to find some relationships in the data. I was successful at pinning a relationship between yardage and price as well as difficulty and price. I Then visualized some of the text data to isolate the words which popped up the most. The visualizations of the words were particularly interesting as they gave two different glimpses at the type of vocabulary knitters use and how we label our patterns.
+
+#### Naive Bayes
+
+The Naive Bayes tab was the first foray into supervised classification algorithms with the express goal, which was repeated later, of predicting the type of pattern based off of given parameters. For Naive Bayes this was taking a set of features, assuming independence, and then using an optimization algorithm to train the relationships In the data. I did a few rounds of this including some feature selection with two different types of the model and ended up with an accuracy rate of 45%-47% which set a benchmark for further tests. I conducted a similar test with my text data and, after shrinking it some, I got an accuracy of 63% which may have been my overall highest. It still did not feel wildly successful, though, as I thought descriptions would be very able to describe the pattern and be much more succesful overall. Again it was wildly trimmed down for my computer to process it but I do hope I can run this specific test again.
+
+#### Clustering
+
+For the clustering tab, My goal was to detect if there were any underlying groups in the data that were not captured by the type or categories of the patterns. I did this with several separate algorithms but was not very successful. Most of the optimal clusters, found using the elbow method or silhouette scores, ended up being very low and simply demarcating the difference between the more plentiful patterns with fewer amounts of yardage and the few that were more like outlier in terms of yardage. I think this was my least successful tab overall although one of my graphs did look like neapolitan ice cream.
+
+#### Dimensionality Reduction
+
+For this tab, my goal was twofold: to use PCA to find a popularity statistic across different parameters and to use TSNE to visualize what some of those patterns may be. As it turned out, I was successful in the former but not in the latter. The PCA was able to capture the variability in the data with a first principal component with 98% of the variance explained which I used to reference which pattern was truly the most successful. For TSNE however the visuals took a long time to process and never seemed to give information about the data itself even at different perplexity scores. I ended up leaving it on a visualization which I thought looked like the Antarctic flag.
+
+#### Decision Trees
+
+Decision Trees were my last tab where I again worked to classify the type of a pattern based off of the information. I did a few rounds of hyperparameter selection by finding an optimal max depth as well as the features which were able to accurately predict the targets the best. Singular decision trees were only able to get me about 46% accuracy, which was comparable to the Naive Bayes methods, so I attempted a boosting method as well. This managed to increase my accuracy to 55% which, while not as good as the text Naive Bayes, ended up being one of the most successful of all of my classifying models.
+
+## Reflecting on Research Questions
+
+1. What relationships exist between known parameters?
+
+I was able to establish some relationships between parameters but couldn't with others. The data was fairly dense so there is more to discover.
+
+2. Are there groupings outside of known parameters that better represent the data?
+
+It did not seem like there were other than general grouping in the density of the data.
+
+3. Are there any parameters that overlap and could reduce redundancy?
+
+There was no overlap other than in values with slight differences such as notes, notes_html and needle size US vs. metric.
+
+4. What sort of keywords are most often used in pattern descriptions?
+
+Intuitively, pattern was the most cited with others such as knit, yarn, gauge, needle, and size being common.
+
+5. What ways are there to measure popularity of a specific pattern
+
+I used the counts of various things and ratings scores in a Principal Component Analysis and was able to determine popularity in a cohesive way.
+
+6. How could a more tailored recommendation algorithm be built?
+
+While I did not get to do this, a ARM model could be fitted to fill that purpose
+
+7. Are some pattern types more popular than others?
+
+Yes! Socks, shawls, pullovers, and hats were by far more popular than all other patterns, even scarves!
+
+8. Could a machine learning process determine the kind of garment by the parameters?
+
+With mixed results. Given the data, accuracy would be a coinflip but it is within possibility.
+
+9.  How could pattern data be best correlated with real world trends if at all?
+
+The data is not time seriesed to allow for overlap in that way but there are some historic outliers such as the pussy cat hat mentioned in the EDA section.
+
+10. What parameters could be used to create a more succinct pattern browsing experience
+
+From my own knowledge of the patterns, dimensional values like gauge give an idea of shape. This could help knitters find something appropriate by accurate size and give the models another powerful datapoint to help predict.
+
+## Future Work
+
+While the data that I had was very successful in being able to accurately label, classify, visualize, and describe relationships in the data, I only scratched the surface of the database itself and the different parameters it contains. 
+
+First, I was only able to access 100,000 patterns recommended by Ravelry. This was a blessing and a curse as querying more patterns may have taken exponentially longer but in the future I would like to try to have a full list of all the patterns, the users that created them, and all the information about the patterns themselves. This would be over one million lines of information and could most likely be used to improve the performance of the pre-existing models on this website.
+
+Further, I did not engage directly with the pattern attributes and categories which act as subsections for users to find the patterns they were interested in. Due to the nested and recursive nature of these parameters this did not seem to be a successful goal for this project but I can imagine using those as a help in classifying in the future; or using the attributes and categories as a target value itself.
+
+Lastly, I would like to spend more time focusing on user behavior and creating a feedback loop for Ravelry to encourage use with optimized targeting algorithms. This goal was mostly halted by the lack of patterns available in total, as I would only have a slice of each user's interaction with the site. In the future though there may be success in creating better targeting algorithms with a method like ARM which I did not approach in this project.
+
+## Closing Thoughts
+
+As I said when I started this project, this has been one of my favorite datasets I've worked on as it relates to a personal passion and has a good mix of record and label data for me to use with models. My interest in some of the more data based parts of knitting has increased and I have learned many fun facts which I was able to share with friends, knitting circles, and the internet. I'm glad to have had the chance to work on this project and I look forward to continuing to work with the data and gain more insight into my favorite hobby.
+

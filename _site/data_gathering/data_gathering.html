@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSAN-5000: Project - Data Gathering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/about_me.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/powellres" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.ravelry.com/api#index" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../introduction/introduction.html" rel="" target="">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../data_gathering/data_gathering.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
+ <span class="menu-text">Data Cleaning</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
+ <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../naive_bayes/naive_bayes.html" rel="" target="">
+ <span class="menu-text">Naive Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../clustering/clustering.html" rel="" target="">
+ <span class="menu-text">Clustering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/dimensionality_reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/decision_trees.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../conclusions/conclusions.html" rel="" target="">
+ <span class="menu-text">Conclusions</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#initial-attempt" id="toc-initial-attempt" class="nav-link" data-scroll-target="#initial-attempt">Initial Attempt</a></li>
+  <li><a href="#successful-attempt" id="toc-successful-attempt" class="nav-link" data-scroll-target="#successful-attempt">Successful Attempt</a></li>
+  <li><a href="#query-step" id="toc-query-step" class="nav-link" data-scroll-target="#query-step">Query Step</a></li>
+  <li><a href="#get-pattern-step" id="toc-get-pattern-step" class="nav-link" data-scroll-target="#get-pattern-step">Get Pattern Step</a></li>
+  <li><a href="#writing-the-data-to-my-computer-using-jsonlite" id="toc-writing-the-data-to-my-computer-using-jsonlite" class="nav-link" data-scroll-target="#writing-the-data-to-my-computer-using-jsonlite">Writing the Data to my Computer using JSONlite</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Gathering</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>For this project I will be accessing the Ravelry API for pattern data from the Database. When trying to find larger databases of patterns Ravelry is the only source which is open to the public and not proprietary to an organization. I was still concerned that I was overstepping my bounds in downloading the data so I actually sent an email to the Ravelry API team:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Approval.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">“Me emailing the API dev and them saying it was cool”</figcaption>
+</figure>
+</div>
+<p>With this remarkable stamp of approval I began the process of pinging the API for pattern data. This also acted as my introduction to using API’s formally and I was lucky to find an article which was an example of how to use API’s with the Ravelry API. The article, linked below, was written expressly to help understand how API’s worked and I used some of her code in order to set up my first API trials.</p>
+<p><a href="https://medium.com/data-science-at-microsoft/how-to-access-an-api-for-first-time-api-users-879002f5f58d">“Medium API Website”</a></p>
+<p>I had already explored the Ravelry’s API and documentation to understand what I was looking for. I had also made a pro account and a read key that I could use to get information and not much else, which was okay since I was just downloading information. This made plugging in the information pretty easy so I did my first request of pattern information.</p>
+</section>
+<section id="initial-attempt" class="level2">
+<h2 class="anchored" data-anchor-id="initial-attempt">Initial Attempt</h2>
+<p>After giving some general details about how API’s work she provided example code which was as follows. I input one of the patterns I’m a fan of to give an example response value.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## I'm working on it</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>import http.client</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>import json</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>import requests</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>import pandas as pd</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">## borrowed code</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>authUsername <span class="ot">=</span> <span class="st">"read-e0c523a2ded312cf2cf7cb481460fd47"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>authPassword <span class="ot">=</span> <span class="st">"oscwhYXQaBG/eh+XNej+Z50xvHiQkjPb6IrzTImB"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#define URL for the API request</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>url <span class="ot">=</span> <span class="st">'https://api.ravelry.com/patterns/search.json?query={}&amp;page={}&amp;page_size={}'</span><span class="fu">.format</span>(<span class="st">"Seafaring Scarf"</span>, <span class="dv">1</span>, <span class="dv">1</span>, )</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#make the request</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">requests.get</span>(url, <span class="at">auth=</span><span class="fu">requests.auth.HTTPBasicAuth</span>(authUsername, authPassword))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#close the connection</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">r1.close</span>()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"response output formatted:"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">json.dumps</span>(<span class="fu">json.loads</span>(r1.text), <span class="at">indent=</span><span class="dv">4</span>)) <span class="co">#makes the json more readable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>response output formatted:
+{
+    "patterns": [
+        {
+            "free": true,
+            "id": 968210,
+            "name": "Seafaring Scarf in Big Good Wool",
+            "permalink": "seafaring-scarf-in-big-good-wool",
+            "personal_attributes": null,
+            "first_photo": {
+                "id": 87973822,
+                "sort_order": 1,
+                "user_id": 31533,
+                "x_offset": -1,
+                "y_offset": -35,
+                "square_url": "https://images4-f.ravelrycache.com/uploads/purlsoho/652402390/seafaring-scarf-BGW-600-4_square.jpg",
+                "medium_url": "https://images4-f.ravelrycache.com/uploads/purlsoho/652402390/seafaring-scarf-BGW-600-4_medium.jpg",
+                "thumbnail_url": "https://images4-g.ravelrycache.com/uploads/purlsoho/652402390/seafaring-scarf-BGW-600-4_thumbnail.jpg",
+                "small_url": "https://images4-g.ravelrycache.com/uploads/purlsoho/652402390/seafaring-scarf-BGW-600-4_small.jpg",
+                "medium2_url": "https://images4-a.ravelrycache.com/uploads/purlsoho/652402390/seafaring-scarf-BGW-600-4_medium2.jpg",
+                "small2_url": "https://images4-f.ravelrycache.com/uploads/purlsoho/652402390/seafaring-scarf-BGW-600-4_small2.jpg",
+                "caption": null,
+                "caption_html": null,
+                "copyright_holder": null
+            },
+            "designer": {
+                "crochet_pattern_count": 48,
+                "favorites_count": 23745,
+                "id": 40686,
+                "knitting_pattern_count": 675,
+                "name": "Purl Soho",
+                "patterns_count": 723,
+                "permalink": "purl-soho",
+                "users": [
+                    {
+                        "id": 31533,
+                        "username": "purlsoho",
+                        "tiny_photo_url": "https://avatars-d.ravelrycache.com/purlsoho/615839432/purl_soho_logo_tiny.jpg",
+                        "small_photo_url": "https://avatars-d.ravelrycache.com/purlsoho/615839432/purl_soho_logo_small.jpg",
+                        "photo_url": "https://avatars-d.ravelrycache.com/purlsoho/615839432/purl_soho_logo_large.jpg"
+                    }
+                ]
+            },
+            "pattern_author": {
+                "crochet_pattern_count": 48,
+                "favorites_count": 23745,
+                "id": 40686,
+                "knitting_pattern_count": 675,
+                "name": "Purl Soho",
+                "patterns_count": 723,
+                "permalink": "purl-soho",
+                "users": [
+                    {
+                        "id": 31533,
+                        "username": "purlsoho",
+                        "tiny_photo_url": "https://avatars-d.ravelrycache.com/purlsoho/615839432/purl_soho_logo_tiny.jpg",
+                        "small_photo_url": "https://avatars-d.ravelrycache.com/purlsoho/615839432/purl_soho_logo_small.jpg",
+                        "photo_url": "https://avatars-d.ravelrycache.com/purlsoho/615839432/purl_soho_logo_large.jpg"
+                    }
+                ]
+            },
+            "pattern_sources": [
+                {
+                    "amazon_rating": null,
+                    "amazon_reviews": null,
+                    "amazon_sales_rank": null,
+                    "amazon_updated_at": null,
+                    "amazon_url": null,
+                    "approved_patterns_count": 701,
+                    "asin": "",
+                    "author": "",
+                    "author_pattern_author_id": null,
+                    "author_surname": "",
+                    "book_binding": null,
+                    "completed": false,
+                    "created_at": "2016/04/23 22:05:01 -0400",
+                    "created_by_user_id": 433514,
+                    "designer_pending_patterns_count": 0,
+                    "designer_users_count": 0,
+                    "editorships_count": 0,
+                    "favorites_count": 2825,
+                    "first_photo_id": null,
+                    "flaggings_count": 0,
+                    "fulfilled_by_ravelry": false,
+                    "has_photo": false,
+                    "id": 207513,
+                    "isbn_13": null,
+                    "issue": null,
+                    "keywords": "purlsoho",
+                    "label": null,
+                    "large_image_url": null,
+                    "last_pattern_edit": "2023/11/27 14:10:09 -0500",
+                    "link_id": 317032,
+                    "list_price": null,
+                    "lock_version": 17,
+                    "medium_image_url": null,
+                    "name": "Purl Soho",
+                    "out_of_print": false,
+                    "pattern_source_type_id": 3,
+                    "patterns_count": 810,
+                    "pending_patterns_count": 109,
+                    "periodical": false,
+                    "permalink": "purl-soho",
+                    "photos_permitted": false,
+                    "popularity": 0.0,
+                    "popularity_rank": 2147483647,
+                    "price": null,
+                    "publication_date": null,
+                    "publication_date_set": 0,
+                    "publication_day_set": 0,
+                    "publication_sort_order": null,
+                    "publication_year": null,
+                    "publisher_id": null,
+                    "shelf_image_path": null,
+                    "shelf_image_size": null,
+                    "small_image_url": null,
+                    "source_group_id": null,
+                    "stickies_count": 0,
+                    "store_id": null,
+                    "updated_at": "2021/03/27 10:07:19 -0400",
+                    "url": "http://www.purlsoho.com/",
+                    "work_id": null,
+                    "notes": ""
+                }
+            ]
+        }
+    ],
+    "paginator": {
+        "page_count": 11,
+        "page": 1,
+        "page_size": 1,
+        "results": 11,
+        "last_page": 11
+    }
+}</code></pre>
+</div>
+</div>
+<p>This attempt was very successful and I was able to get a pull of a pattern I liked. I did notice though that this json file did not actually have all the information I was interested in. The file itself seemed to be formatted more with information about the user and its position in the website. Given this was the case I continued into the article.</p>
+<p>She expanded upon the API’s methods with classes and functions, however she also linked to some other resources which included a package in R specifically designed for use with the Ravelry API. So like most programmers I decided to use another’s work for my own benefit.</p>
+<p><a href="https://www.rdocumentation.org/packages/ravelRy/versions/0.1.0">“Documentation for the ravelRy package”</a></p>
+</section>
+<section id="successful-attempt" class="level2">
+<h2 class="anchored" data-anchor-id="successful-attempt">Successful Attempt</h2>
+<p>Table of process - Package overview<br>
+- Description of process<br>
+- Query step &nbsp; - Query timing<br>
+- Query optimization<br>
+- Query timing<br>
+- Optimizing by page number<br>
+- Data collection through Query<br>
+- Get pattern step<br>
+- Pattern timing<br>
+- Pattern optimization<br>
+- Pattern collection through iterative process<br>
+- Summary of remaining data<br>
+- Conclusions<br>
+</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Never do work someone has done before</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ravelRy)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">"ravelRy is an R package that provides access to the Ravelry API."</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">"Ravelry describes itself as a place for knitters, crocheters, designers, spinners, weavers and dyers to keep track of their yarn, tools, project and pattern information, and look to others for ideas and inspiration."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+'ravelRy is an R package that provides access to the Ravelry API.'
+</div>
+<div class="cell-output cell-output-display">
+'Ravelry describes itself as a place for knitters, crocheters, designers, spinners, weavers and dyers to keep track of their yarn, tools, project and pattern information, and look to others for ideas and inspiration.'
+</div>
+</div>
+<section id="package-overview" class="level4">
+<h4 class="anchored" data-anchor-id="package-overview">Package Overview</h4>
+<p>The package required the same username and password I had made before, so I established them in my .Renviron folder so they could be accessed without console intervention. This step was required as the package would use the console to ask for username and password which stopped Quarto from rendering.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Establishing Credentials</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#ravelry_auth(key = 'username') </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#ravelry_auth(key = 'password')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Having set it up, I was left to run my query and collect as many data entries as I could reasonably. The database itself has, on my last check, one million two hundred and sixty three thousand nine hundred and eleven patterns. While I do not need all those patterns, I’m looking to get as many as reasonable which would be at maximum one million and minimum one hundred thousand.</p>
+</section>
+<section id="description-of-process" class="level4">
+<h4 class="anchored" data-anchor-id="description-of-process">Description of Process</h4>
+<p>On my end this collection included two steps, the first of which involved a direct query of the database as if I were doing a search (search_patterns). I could have provided some specifics to the query such as category or type but I was more concerned with having as much information as possible at this stage.</p>
+<p>The second step involved using a built-in function of the package to actually get the pattern information which I will be analyzing, this is the stuff that was not available with the traditional API pull. Interestingly this step took more time to process than the previous and I did some experimenting to optimize the steps. I will mention that and more after I complete the demo of the data gathering process.</p>
+</section>
+</section>
+<section id="query-step" class="level2">
+<h2 class="anchored" data-anchor-id="query-step">Query Step</h2>
+<p>And thus I began the process of querying data optimally and maximally.</p>
+<section id="query-timing" class="level4">
+<h4 class="anchored" data-anchor-id="query-timing">Query Timing</h4>
+<p>I am starting but doing some tests on query time in comparison to amount and so I took the length step of doing a for loop for each 10 queries. There is currently an abridged amount but the pattern should hold and I will prove that once I can process better.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>query_times <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">250</span>){</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  n_query <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">*</span>i</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  query_start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  search_results <span class="ot">&lt;-</span> <span class="fu">search_patterns</span>(<span class="at">query =</span> <span class="st">''</span>,<span class="at">page_size =</span> n_query)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  query_results_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  query_times <span class="ot">&lt;-</span> <span class="fu">c</span>(query_times,query_results_time <span class="sc">-</span> query_start_time)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>end_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#print("This test took " + str(end_time - start_time) + " seconds to run")</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># this took alot of time</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-error">
+<pre><code>: </code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="18">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>query_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>((<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(query_times))<span class="sc">*</span><span class="dv">10</span>,query_times)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(query_data)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"query_amount"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> query_data, query_times <span class="sc">~</span> query_amount)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> model<span class="sc">$</span>coefficients[<span class="dv">2</span>] <span class="co"># slope</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> model<span class="sc">$</span>coefficients[<span class="dv">1</span>] <span class="co"># intercept</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> query_data, <span class="fu">aes</span>(<span class="at">x =</span> query_amount,<span class="at">y=</span>query_times)) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"Amount of patterns querried"</span>) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Time taken to query patterns (s)"</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Rate of querying"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>
+Call:
+lm(formula = query_times ~ query_amount, data = query_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.8921 -0.8584 -0.0823  0.5701  4.4548 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.1560400  0.1617484   0.965    0.336    
+query_amount 0.0076100  0.0001117  68.113   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.275 on 248 degrees of freedom
+Multiple R-squared:  0.9493,    Adjusted R-squared:  0.9491 
+F-statistic:  4639 on 1 and 248 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="data_gathering_files/figure-html/cell-7-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Upon visualization there is a fairly linear trend with some variance change as the query rate goes larger. This variance can probably be found in the difference in computational power in my computer moment to moment. However the linear trend, as shown by the quick regression model I computed, is a good sign that there aren’t any artificial constraints on the system to limit querying. Also given the equation found of time = .0068(amount) + .174 we can guess that querying one million patterns will take about 7600 seconds or 113 minutes which is about 2 hours. It would be optimal to just plug that amount into the search patterns feature but there seems to be an unofficial limit to the amount of patterns that can be referenced which I will talk about next.</p>
+</section>
+<section id="optimizing-by-page-number" class="level4">
+<h4 class="anchored" data-anchor-id="optimizing-by-page-number">Optimizing by Page Number</h4>
+<p>After completing a large number of queries, most often at or above 5000, there will be an error that says a json wasn’t read. This implies that there is a hard limit to how many patterns can be searched in a single query. The logical solution is to do multiple queries with a set amount. In the search_patterns function there is another variable aside from page_size, which gives the number of results to retrieve, page gives which page to start one. Now the page size on the website averages to 48, however the page size of the query function is variable and is dependent on the amount of patterns being queried. However, this works in our favor as queries starting at different pages will always go by the page number for amount, meaning we can run as many queries as desired that will not overlap by keeping the amount per page consistent and using the next page. In this example we get Weekend hat being the last pattern of a 100 pattern page 1 and the first of a 99 pattern page 2. We are intentionally creating a lag here so that we can show the overlap, this would not happen if the page sizes were the same.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="20">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>page_1 <span class="ot">&lt;-</span> <span class="fu">search_patterns</span>(<span class="at">query =</span> <span class="st">''</span>,<span class="at">page_size =</span> <span class="dv">100</span>,<span class="at">page =</span> <span class="dv">1</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>page_2 <span class="ot">&lt;-</span> <span class="fu">search_patterns</span>(<span class="at">query =</span> <span class="st">''</span>,<span class="at">page_size =</span> <span class="dv">99</span>,<span class="at">page =</span> <span class="dv">2</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>page_2_start <span class="ot">&lt;-</span> page_2<span class="sc">$</span>name[<span class="dv">1</span>]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>page_1_overlap <span class="ot">&lt;-</span> page_1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(name <span class="sc">==</span> page_2_start)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>page_1_overlap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 1 × 7</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">free</th>
+<th data-quarto-table-cell-role="th" scope="col">id</th>
+<th data-quarto-table-cell-role="th" scope="col">name</th>
+<th data-quarto-table-cell-role="th" scope="col">permalink</th>
+<th data-quarto-table-cell-role="th" scope="col">designer.id</th>
+<th data-quarto-table-cell-role="th" scope="col">designer.name</th>
+<th data-quarto-table-cell-role="th" scope="col">pattern_sources</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;lgl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;list&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FALSE</td>
+<td>1300588</td>
+<td>Weekend Hat</td>
+<td>weekend-hat-5</td>
+<td>92889</td>
+<td>PetiteKnit</td>
+<td>, , , , , 258 , , Mette Wendelboe Okkels , 92889 , Okkels , , FALSE , 2016/10/26 09:41:37 -0400 , 6732810 , 0 , 0 , 0 , 11144 , , 2 , FALSE , FALSE , 215774 , , , petiteknit.com, Petite Knit , , , 2023/10/25 08:38:21 -0400 , 399411 , , 14 , , PetiteKnit Ravelry Store , FALSE , 7 , 262 , 4 , FALSE , petiteknit-ravelry-store , FALSE , 0 , 2147483647 , , , 0 , 0 , , , , , , , , 9 , 59482 , 2022/05/13 01:14:08 -0400 , https://www.ravelry.com/stores/petiteknit, ,</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-collection-through-query" class="level4">
+<h4 class="anchored" data-anchor-id="data-collection-through-query">Data Collection through Query</h4>
+<p>After condensing a way to give a max query by page I can estimate a total amount of data of 1000000 which I will now query. Based on the equation given this is expected to take around 2 hours of time give or take a few minutes due to the added time of merging data sets between steps. I’m looking here to gather one million data entries in stages of 2000 queries, so I will be running a 400 round for loop in order to accomplish this goal.</p>
+<p>Inevitably however I ran into a different setback, the api actually only references up to the first 100,000 patterns which limits my sample size. As seen below it will not be able to return the final JSONs. With this being the case, I decided to settle with 100,000 patterns; an amount that is below optimal but will probably save me time in the long run.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>query_start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>){</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    search_results <span class="ot">&lt;-</span> <span class="fu">search_patterns</span>(<span class="at">query =</span> <span class="st">''</span>,<span class="at">page_size =</span> <span class="dv">3000</span>,<span class="at">page =</span> i)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        query_total <span class="ot">&lt;-</span> search_results</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span>{</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        query_total <span class="ot">&lt;-</span> <span class="fu">rbind</span>(query_total,search_results)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>query_results_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(query_results_time <span class="sc">-</span> query_start_time)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(query_total))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(query_total,<span class="st">"query_results.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>ERROR: Error: API did not return json</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>query_data <span class="ot">&lt;-</span> query_total</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>query_json <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(query_data)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">validate</span>(query_json)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_json</span>(query_json,<span class="st">"../data/query_data_raw.JSON"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+TRUE
+</div>
+</div>
+<p>After getting it all I wrote the data to a JSON file so I wouldn’t have to run it again later.</p>
+<p>As a part of the process I also completed the timely step of calculating the query time for each query. I may have over crashed my queries per day but I was having fun.</p>
+</section>
+</section>
+<section id="get-pattern-step" class="level2">
+<h2 class="anchored" data-anchor-id="get-pattern-step">Get Pattern Step</h2>
+<section id="pattern-timing" class="level4">
+<h4 class="anchored" data-anchor-id="pattern-timing">Pattern timing</h4>
+<p>Similar to the query time the pattern time tends to change with the amount of data so I will do a test run of timing for a possible optimization problem. I will again go by every 10 queries and will ignore the time taken to request the query. As this is a separate step in my real process I will not need to worry about batching it in the same amount as the queries.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="13">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pattern_times <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>search_results <span class="ot">&lt;-</span> <span class="fu">search_patterns</span>(<span class="at">query =</span> <span class="st">''</span>,<span class="at">page_size =</span> <span class="dv">2500</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">250</span>){</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  pattern_start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_patterns</span>(<span class="at">id =</span> search_results<span class="sc">$</span>id[<span class="dv">1</span><span class="sc">:</span>i<span class="sc">*</span><span class="dv">10</span>])</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  pattern_results_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  pattern_times <span class="ot">&lt;-</span> <span class="fu">c</span>(pattern_times,pattern_results_time <span class="sc">-</span> pattern_start_time)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="24">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pattern_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>((<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pattern_times))<span class="sc">*</span><span class="dv">10</span>,pattern_times)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pattern_data)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"pattern_amount"</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># When it took longer than a minute to get the patterns the response changed from seconds to minutes</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I changed it back here to keep units</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>pattern_data_adapt <span class="ot">&lt;-</span> pattern_data</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">250</span>){</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(pattern_data_adapt[i,<span class="dv">2</span>] <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> i <span class="sc">&gt;</span><span class="dv">100</span>){</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        pattern_data_adapt[i,<span class="dv">2</span>] <span class="ot">&lt;-</span> pattern_data_adapt[i,<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">60</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pattern_data_adapt, <span class="fu">aes</span>(<span class="at">x =</span> pattern_amount,<span class="at">y=</span> pattern_times)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="data_gathering_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Looking at this data it seems as if there is a vague exponential distribution although the main takeaway is that finding the pattern information takes much more time than the individual queries. This would make it a much more limiting factor in my wild attempt for insane amounts of data. Luckily this trend wasn’t actually too representative of the final amount of time and it was not long at all, but I still wanted to optimize and prepare for the conversion.</p>
+</section>
+<section id="pattern-optimization" class="level4">
+<h4 class="anchored" data-anchor-id="pattern-optimization">Pattern Optimization</h4>
+<p>Using the data from before we can do a quick test to see which point has the optimal ratio of amount to time. The units in this would be patterns per second and we are looking for the maximum number out of all of the tme pattern combos.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="40">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pattern_data_adapt<span class="sc">$</span>pattern_ratio <span class="ot">=</span> pattern_data_adapt<span class="sc">$</span>pattern_amount<span class="sc">/</span>pattern_data_adapt<span class="sc">$</span>pattern_times</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(pattern_data_adapt<span class="sc">$</span>pattern_ratio)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>pattern_data_adapt[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pattern_data_adapt, <span class="fu">aes</span>(<span class="at">x =</span> pattern_amount, <span class="at">y =</span> pattern_ratio)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+143.933179214819
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 10 × 3</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">pattern_amount</th>
+<th data-quarto-table-cell-role="th" scope="col">pattern_times</th>
+<th data-quarto-table-cell-role="th" scope="col">pattern_ratio</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">1</td>
+<td>10</td>
+<td>0.07591796</td>
+<td>131.7211</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">2</td>
+<td>20</td>
+<td>0.14022303</td>
+<td>142.6299</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">3</td>
+<td>30</td>
+<td>0.26294994</td>
+<td>114.0902</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">4</td>
+<td>40</td>
+<td>0.30642605</td>
+<td>130.5372</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">5</td>
+<td>50</td>
+<td>0.50406885</td>
+<td>99.1928</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">6</td>
+<td>60</td>
+<td>0.41686010</td>
+<td>143.9332</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">7</td>
+<td>70</td>
+<td>0.52426100</td>
+<td>133.5213</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">8</td>
+<td>80</td>
+<td>0.63188291</td>
+<td>126.6057</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">9</td>
+<td>90</td>
+<td>0.72974205</td>
+<td>123.3313</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">10</td>
+<td>100</td>
+<td>0.87868285</td>
+<td>113.8067</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="data_gathering_files/figure-html/cell-13-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<p>With the data that I have it seems that a lower amount around 60-70 is actually the most efficient amount of patterns to get at a time. However, with it to make an even breakdown of the 100,000 patterns I’m going to break it into 80 pattern chunks. I’m not considering the amount of time that it takes to merge the resulting values with an rbind. I will worry about this later if I need to optimize further.</p>
+</section>
+<section id="pattern-collection-through-iterative-process" class="level4">
+<h4 class="anchored" data-anchor-id="pattern-collection-through-iterative-process">Pattern Collection Through Iterative Process</h4>
+<p>The next step after querying as much data as possible was using the built in get_patterns() function to get the pattern details I was interested in. If I’m patterning about 100,000 ids then in chunks of 80 with about .65 seconds a package then I will have a total time as follows:</p>
+<p><span class="math display">\[
+\frac{100000}{80}*.63188=789.85 \text{ seconds or } 13.16 \text{ minutes}
+\]</span></p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>query_json <span class="ot">&lt;-</span> <span class="fu">read_json</span>(<span class="st">"../data/query_data_raw.JSON"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="34">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>query_data <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(query_json[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="45">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>patterns_start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1249</span>){</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Some patterns did not return a value, this could be do to pattern deletion so a try statement is used</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  pattern_inst <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">get_patterns</span>(<span class="at">ids =</span> query_data<span class="sc">$</span>id[((i<span class="sc">*</span><span class="dv">80</span>)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>((i<span class="sc">+</span><span class="dv">1</span>)<span class="sc">*</span><span class="dv">80</span>)]))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    pattern_data <span class="ot">=</span> pattern_inst</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    pattern_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(pattern_data,pattern_inst)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span>{</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    pattern_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(pattern_data,pattern_inst)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>patterns_end_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(patterns_end_time<span class="sc">-</span>patterns_start_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : API did not return json
+Time difference of 5.218724 hours</code></pre>
+</div>
+</div>
+<p>So my estimates were wildly off, the patterns actually took around five hours in order to be unpacked, which left me with a set of data that has dimensions of 99921, 53 in comparison to the 100000, 7 of the query data. There is a difference of about 79 patterns as one of the queried pattern ids seemed to not have been present when trying to convert the ids to a pattern data. My belief is that this pattern was deleted between me querying the pattern ids and converting it into information.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="52">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(pattern_data)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(query_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>99921</li><li>53</li></ol>
+</div>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>100000</li><li>7</li></ol>
+</div>
+</div>
+</section>
+</section>
+<section id="writing-the-data-to-my-computer-using-jsonlite" class="level2">
+<h2 class="anchored" data-anchor-id="writing-the-data-to-my-computer-using-jsonlite">Writing the Data to my Computer using JSONlite</h2>
+<p>Anyhow, the next step, which I thought would be easier, would be to write the file to json and then read it in on the data cleaning slide. This proved to be more difficult than I thought for multiple reasons. For one, the files took 4-5 hours to write and read each which became impossible to deal with when the read function started erroring. I re-wrote and re-read the same files and got the same error which leads me to believe there will be a similar issue with one of the patterns corrupting the json when it is being written.</p>
+<p>I would also like to mention that the reason I’m saving it in a JSON format is due to the presence of nested dataframes. This is because the nested dataframes have a lot of information which can’t be stored in a csv format. I’m not sure if writing to csv is faster but I don’t have as much of a choice if i’m doing the data cleaning to fix the nested dataframes in another page. So lets split off the text data and save that as a csv and then test the json limit. JSONlite does have parameters in the write and read functions to reduce the data but unnesting is half of what i do in the cleaning so I’m not going to worry about it. Also it may screw up the data and I don’t care to take the time to test it.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="53">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pattern_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>'comments_count'</li><li>'created_at'</li><li>'currency'</li><li>'difficulty_average'</li><li>'difficulty_count'</li><li>'downloadable'</li><li>'favorites_count'</li><li>'free'</li><li>'gauge'</li><li>'gauge_divisor'</li><li>'gauge_pattern'</li><li>'generally_available'</li><li>'has_uk_terminology'</li><li>'has_us_terminology'</li><li>'id'</li><li>'name'</li><li>'pdf_url'</li><li>'permalink'</li><li>'price'</li><li>'projects_count'</li><li>'published'</li><li>'queued_projects_count'</li><li>'rating_average'</li><li>'rating_count'</li><li>'row_gauge'</li><li>'updated_at'</li><li>'url'</li><li>'yardage'</li><li>'yardage_max'</li><li>'personal_attributes'</li><li>'sizes_available'</li><li>'product_id'</li><li>'currency_symbol'</li><li>'ravelry_download'</li><li>'download_location'</li><li>'pdf_in_library'</li><li>'volumes_in_library'</li><li>'gauge_description'</li><li>'yarn_weight_description'</li><li>'yardage_description'</li><li>'pattern_needle_sizes'</li><li>'notes_html'</li><li>'notes'</li><li>'languages'</li><li>'packs'</li><li>'printings'</li><li>'craft'</li><li>'pattern_categories'</li><li>'pattern_attributes'</li><li>'pattern_author'</li><li>'photos'</li><li>'pattern_type'</li><li>'yarn_weight'</li></ol>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="56">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>patterns_data_text <span class="ot">&lt;-</span> pattern_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(notes_html,notes))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>patterns_data_no_text <span class="ot">&lt;-</span> pattern_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(notes_html,notes))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(patterns_data_text)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(patterns_data_no_text)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(patterns_data_text)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(patterns_data_no_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>'notes_html'</li><li>'notes'</li></ol>
+</div>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>'comments_count'</li><li>'created_at'</li><li>'currency'</li><li>'difficulty_average'</li><li>'difficulty_count'</li><li>'downloadable'</li><li>'favorites_count'</li><li>'free'</li><li>'gauge'</li><li>'gauge_divisor'</li><li>'gauge_pattern'</li><li>'generally_available'</li><li>'has_uk_terminology'</li><li>'has_us_terminology'</li><li>'id'</li><li>'name'</li><li>'pdf_url'</li><li>'permalink'</li><li>'price'</li><li>'projects_count'</li><li>'published'</li><li>'queued_projects_count'</li><li>'rating_average'</li><li>'rating_count'</li><li>'row_gauge'</li><li>'updated_at'</li><li>'url'</li><li>'yardage'</li><li>'yardage_max'</li><li>'personal_attributes'</li><li>'sizes_available'</li><li>'product_id'</li><li>'currency_symbol'</li><li>'ravelry_download'</li><li>'download_location'</li><li>'pdf_in_library'</li><li>'volumes_in_library'</li><li>'gauge_description'</li><li>'yarn_weight_description'</li><li>'yardage_description'</li><li>'pattern_needle_sizes'</li><li>'languages'</li><li>'packs'</li><li>'printings'</li><li>'craft'</li><li>'pattern_categories'</li><li>'pattern_attributes'</li><li>'pattern_author'</li><li>'photos'</li><li>'pattern_type'</li><li>'yarn_weight'</li></ol>
+</div>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>99921</li><li>2</li></ol>
+</div>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>99921</li><li>51</li></ol>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="55">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(patterns_data_text, <span class="st">"../data/patterns_data_text.csv"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="do">## this did not take long enough to make it seem like the culprit for the long write time</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="do">## also for reference the total JSON with the text data was 1.96 GB</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>So, removing the text data and then writing the rest to CSV took absolutely no time at all. This gives me a better idea of splitting off the nested dataframes I’m interested in and then writing the rest out to a CSV, leaving the nested data frames for JSON to crunch.</p>
+<p>I will quickly do a time check to see if there is any idea of splitting apart the dataset into chunks like I did for the queries and patterns. I still believe that splitting the nested from the non nested is the best idea but I’d like to cover my bases.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="59">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>json_times <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> patterns_data_no_text[<span class="dv">1</span><span class="sc">:</span>((i<span class="sc">+</span><span class="dv">1</span>)<span class="sc">*</span><span class="dv">10</span>)]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  json_start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  json_test <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(data)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_json</span>(json_test,<span class="st">"../data/json_test.JSON"</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  json_results_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  json_times <span class="ot">&lt;-</span> <span class="fu">c</span>(json_times,json_results_time <span class="sc">-</span> json_start_time)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-error">
+<pre><code>ERROR: Error in `[.data.frame`(patterns_data_no_text, 1:((i + 1) * 10)): undefined columns selected</code></pre>
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="60">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(json_times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="data_gathering_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Yeah that doesn’t help at all.</p>
+<p>Anway, the splitting of the text data was so successful that I think that I will do the same for all of the non-nested data. I’ll save all the non nested data to a csv and the nested data to a json file that hopefully will be easier to process. I will also use this chance to prune some of the nested dataframes I will not be using in my analysis. It is a bit of data cleaning but I’ve already done more work on this than I thought to it will hopefully be alright.</p>
+<p>I will be separating the following nested columns:<br>
+download_location<br>
+pattern_needle_sizes<br>
+languages<br>
+packs<br>
+printings<br>
+craft<br>
+pattern_categories<br>
+pattern_attributes<br>
+pattern_author<br>
+photos<br>
+pattern_type<br>
+</p>
+<p>Of which I will only keep: pattern_needle_sizes<br>
+craft<br>
+pattern_categories<br>
+pattern_attributes<br>
+pattern_type<br>
+</p>
+<p>The rest could be useful for future use but not for the analysis I intend to use.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="62">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>patterns_to_csv <span class="ot">&lt;-</span> patterns_data_no_text <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(download_location,</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    pattern_needle_sizes,</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    languages,</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    packs,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    printings,</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    craft,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    pattern_categories,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    pattern_attributes,</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    pattern_author,</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    photos,</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    pattern_type))</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>patterns_to_json <span class="ot">&lt;-</span> patterns_data_no_text <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(pattern_needle_sizes,</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    craft,</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    pattern_categories,</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    pattern_attributes,</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>    pattern_type))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="63">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(patterns_to_csv,<span class="st">"../data/patterns_to_csv.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>So writing that all to csv took five seconds while the json took 5 hours. I probably should have been doing this from the start.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="65">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>patterns_json <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(patterns_to_json)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">validate</span>(patterns_json)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#write_json(patterns_json,"../data/pattern_data_raw.JSON")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+TRUE
+</div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="69">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Here goes nothing</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_json</span>(patterns_json,<span class="st">"../data/pattern_data_json.JSON"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>And so after the hours it took to write the json of the full text, just doing it with the nested dataframes only took one second. I would have saved some of my sanity if I had done this from the start.</p>
+<section id="summary-of-situation" class="level4">
+<h4 class="anchored" data-anchor-id="summary-of-situation">Summary of Situation</h4>
+<p>I’m hoping to optimize this process, going forward I’ll use a lower amount of data to do a proof of concept data cleaning step without the full data I hope to analyze. Here is a quick sense of what we’re working with. It’s a bit messy as a JSON but the data cleaning should improve the outcome and look.</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#patterns_json &lt;- read_json("../data/pattern_data_raw.JSON")</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#prettify(patterns_json[[1]])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Overall, I was left with a csv of raw pattern data with 99,979 entries. This process was a path of references and interest in order to collect the data. Next I will be processing the data by stripping unwanted variables and splitting tuples that exist within the dataframe structure. In the future I will continue to update my query optimization process to not overload the system and be able to maximize the amount of documents I receive in the process.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

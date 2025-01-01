@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSAN-5000: Project - DSAN-5000: Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/about_me.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/powellres" rel="" target="">
+ <span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.ravelry.com/api#index" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../introduction/introduction.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_gathering/data_gathering.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data_cleaning/data_cleaning.html" rel="" target="">
+ <span class="menu-text">Data Cleaning</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../eda/eda.html" rel="" target="">
+ <span class="menu-text">Data Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../naive_bayes/naive_bayes.html" rel="" target="">
+ <span class="menu-text">Naive Bayes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../clustering/clustering.html" rel="" target="">
+ <span class="menu-text">Clustering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../dimensionality_reduction/dimensionality_reduction.html" rel="" target="">
+ <span class="menu-text">Dimensionality reduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../decision_trees/decision_trees.html" rel="" target="">
+ <span class="menu-text">Decision Trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../conclusions/conclusions.html" rel="" target="">
+ <span class="menu-text">Conclusions</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary-of-project" id="toc-summary-of-project" class="nav-link active" data-scroll-target="#summary-of-project">Summary of Project</a></li>
+  <li><a href="#relevant-sources" id="toc-relevant-sources" class="nav-link" data-scroll-target="#relevant-sources">Relevant Sources</a>
+  <ul class="collapse">
+  <li><a href="#mechanics-aware-deformation-of-yarn-pattern-geometry" id="toc-mechanics-aware-deformation-of-yarn-pattern-geometry" class="nav-link" data-scroll-target="#mechanics-aware-deformation-of-yarn-pattern-geometry">Mechanics-aware deformation of yarn pattern geometry</a></li>
+  <li><a href="#simulating-knitted-cloth-at-the-yarn-level" id="toc-simulating-knitted-cloth-at-the-yarn-level" class="nav-link" data-scroll-target="#simulating-knitted-cloth-at-the-yarn-level">Simulating Knitted Cloth at the Yarn Level</a></li>
+  </ul></li>
+  <li><a href="#questions-for-research" id="toc-questions-for-research" class="nav-link" data-scroll-target="#questions-for-research">Questions for Research</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">DSAN-5000: Introduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary-of-project" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-project">Summary of Project</h2>
+<p>For the scope of my project, I will delve into the extensive dataset provided by Ravelry.com, which stands as the foremost interactive database for knitting and crochet patterns provided by users across the globe. This database, boasting an extensive collection of hundreds of thousands of patterns. Positioned as the primary resource for pattern discovery and utilization among knitting enthusiasts, there exists a compelling incentive to ensure the sustained engagement of users with the platform to help it maintain its supremacy. I would like to propose the application of machine learning and algorithmic models to help fill this void and provide better understanding of the data present to help with future targeting.</p>
+<p>Despite the significance of Ravelry.com in the knitting community, there is a noticeable absence of direct research aimed at algorithmically enhancing comprehension and targeting within this specific domain and knitting overall. Most other knitting databases are owned by private corporations that create patterns to sell themselves, Ravelry is the only public one and thus the public must help it. Nevertheless, a separate parallel can be drawn between my intended research focus and two distinct but related areas: fabric simulations and user targeting. The latter is a well-established field dedicated to tailoring content to users’ interests, thereby retaining their presence on the platform and driving targeted product engagement. I hope to incorporate those tactics into my work like private organizations would to build my own understanding of the methodology and to act as a consultant for Ravelry. On the other hand, the former represents a subfield within fabric simulations that specifically concentrates on knitted fabrics which, as a field, has been growing due to increased computational capacity. A more holistic understanding of the interplay between various patterns, yarn features, and fabric structures holds the potential to significantly enhance outcomes in fabric simulations and in pattern recommendations.</p>
+<p>I hope to serve as a conduit bridging these two spheres of knowledge together, conducting an initial probe that navigates the intersection of fabric simulations and user targeting by understanding the source of the two, patterns themselves. By doing so, I aim to fill the existing void in algorithmic enhancements for the knitting and crochet community on Ravelry.com. I do hope to also provide interesting facts and insights along the way which can help create a story with the data that can be pitched along with the analysis itself. I look forward to this work, and I also wish to provide some sources about fabric simulations as an example of what I’m mentioning.</p>
+</section>
+<section id="relevant-sources" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-sources">Relevant Sources</h2>
+<section id="mechanics-aware-deformation-of-yarn-pattern-geometry" class="level3">
+<h3 class="anchored" data-anchor-id="mechanics-aware-deformation-of-yarn-pattern-geometry">Mechanics-aware deformation of yarn pattern geometry</h3>
+<p><span class="citation" data-cites="sperl2021mechanics">[see @sperl2021mechanics]</span> This research paper undertook a noteworthy challenge by seeking to replace the prevailing industry standard, the triangle mesh fabric simulation method, with an innovative approach centered around knitted fabric simulation. The researchers achieved a commendable milestone, successfully implementing this novel method, albeit at a restricted scale. This strategic augmentation aimed to enhance the fidelity of fabric physics reproduction, pushing the boundaries to the extent of capturing intricate details such as yarn loop stretching.</p>
+<p>In the pursuit of this groundbreaking endeavor, the researchers navigated the complexities of transitioning from the established triangle mesh paradigm to a more tailored knitted fabric simulation. This transition, while achieved at a limited size, lays the groundwork for potential advancements in fabric simulation techniques.</p>
+<p>The successful integration of yarn layer animation over the traditional mesh not only demonstrates the adaptability of the proposed method but also underscores its potential applicability in broader contexts. The ability to capture yarn loop stretching is particularly noteworthy, as it signifies a breakthrough which could update the current paradigm and simplify the process for knitted fabrics in the future, saving computational power. This nuanced simulation approach may pave the way for more comprehensive studies into the behavior and optimization of knitted fabrics under diverse conditions, providing valuable insights for industries ranging from fashion to technical textiles.</p>
+</section>
+<section id="simulating-knitted-cloth-at-the-yarn-level" class="level3">
+<h3 class="anchored" data-anchor-id="simulating-knitted-cloth-at-the-yarn-level">Simulating Knitted Cloth at the Yarn Level</h3>
+<p><span class="citation" data-cites="kaldor2008simulating">[see @kaldor2008simulating]</span> In this pioneering research endeavor, the focus was squarely set on revolutionizing the conventional woven fabric model employed in fabric simulation by introducing a paradigm shift of adopting the interlocking loops characteristic of knitted fabrics. This is separate from the previous paper as it focuses less on recreating behavior but on simulating the yarn itself as one continuous thread at tension. This transformative departure represents a fundamental reorientation in the approach to fabric simulation, shifting the layer of analysis from the collective movement of an entire sheet of fabric to the intricate behavior of individual strands of yarn as mentioned.</p>
+<p>The crux of this methodological shift lies in the nuanced simulation of yarn parameters, a departure from the more generalized approach inherent in traditional woven fabric simulations. By delving into the intricate characteristics of yarn such as tensile strength, weave, and fiber content, researchers sought to capture the complexities that arise from the interlocking loops present in knitted fabrics. This granular analysis enables a more detailed and faithful representation of the dynamic interplay between yarn strands, uncovering subtleties in movement, tension, and deformation that are integral to the authentic behavior of knitted fabrics.</p>
+<p>The essence of this approach lies not only in the simulation of individual yarn strands but also in the subsequent extrapolation of these micro-level behaviors to construct larger scale models. Singular loops may be easy to model for instance, but simulating thousands all interacting with each other is a much more computationally dense task which this paper achieved. The ability to reproduce intricate yarn behaviors over broader fabric surfaces holds immense promise in advancing the understanding of knitted fabrics’ dynamic response to external forces, contributing to a more nuanced comprehension of their mechanical properties.</p>
+<p>As this research ushers in a new era of fabric simulation methodologies, the implications extend beyond the immediate confines of academia. Industries reliant on accurate fabric representation, such as fashion, textiles, and materials science, stand to benefit significantly from these advancements in simulating fabrics before producing them or by modeling cuts of fabric before they are produced.. The potential for this novel approach to inform design processes, enhance manufacturing efficiency, and foster innovation across various sectors underscores the far-reaching impact of this paradigm change in fabric simulation.</p>
+</section>
+</section>
+<section id="questions-for-research" class="level2">
+<h2 class="anchored" data-anchor-id="questions-for-research">Questions for Research</h2>
+<ol type="1">
+<li>What relationships exist between known parameters?</li>
+<li>Are there groupings outside of known parameters that better represent the data?</li>
+<li>Are there any parameters that overlap and could reduce redundancy?</li>
+<li>What sort of keywords are most often used in pattern descriptions?</li>
+<li>What ways are there to measure popularity of a specific pattern?</li>
+<li>How could a more tailored recommendation algorithm be built?</li>
+<li>Are some pattern types more popular than others?</li>
+<li>Could a machine learning process determine the kind of garment by the parameters?</li>
+<li>How could pattern data be best correlated with real world trends if at all?</li>
+<li>What parameters could be used to create a more succinct pattern browsing experience?</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,22 @@
+---
+title: "DSAN-5000: Personal Project Powell Sheagren"
+---
+
+Welcome to Powell Sheagren's DSAN 5000 project website. Please navigate to one of the operational tabs. At the moment that includes:
+
+About Me: a summary of the author and the work that he does\
+Code: a link to the author's github\
+Data: a link to Ravelry where the data was pulled from (account it required)\
+Introduction: a brief intro to the data and the questions to be answered by the project\
+Data Gathering: the process of collecting the data from Ravelry\
+Data Cleaning: the process of cleaning the data for use\
+Data Exploration: learning about the data and deriving insights\
+Naive Bayes: a classification model to predict pattern type\
+Clustering: a unsupervised learning method to find hidden groupings in the data\
+Dimensionality Reduction: reduce the dimensions of the data for better analysis\
+Decision Trees: a model used predict pattern type in a different way\
+Conclusion: a summary of the other tabs and show of all accomplished\
+
+I hope you enjoy the analysis and if there are any questions I can be reached at prs64@georgetown.edu
+
+!["Word Cloud of Pattern Types"](images/wordcloud.png)
